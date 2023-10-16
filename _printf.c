@@ -15,7 +15,6 @@ void cleanup(va_list args, buffer_t *output)
 	write(1, output->start, output->len);
 	free_buffer(output);
 }
-
 /**
  * run_printf - Reads through the format string for _printf.
  * @format: Character string to print - may contain directives.
@@ -56,4 +55,11 @@ int run_printf(const char *format, va_list args, buffer_t *output)
 				ret = -1;
 				break;
 			}
+		}
+		ret += _memcpy(output, (format + i), 1);
+		i += (len != 0) ? 1 : 0;
+	}
+	cleanup(args, output);
+	return (ret);
+}
 
