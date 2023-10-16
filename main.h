@@ -18,6 +18,10 @@
 #define ZERO_FLAG ((flags >> 3) & 1)
 #define NEG_FLAG ((flags >> 4) & 1)
 
+/* Length Modifier Macros */
+#define SHORT 1
+#define LONG 2
+
 /**
  * struct buffer_s - A new type defining a buffer struct.
  * @buffer: A pointer to a character array.
