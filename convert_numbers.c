@@ -38,8 +38,8 @@ unsigned int convert_di(va_list args, buffer_t *output,
 	/* Handle space flag */
 	if (SPACE_FLAG == 1 && d >= 0)
 		ret += _memcpy(output, &space, 1);
-
-	if (prec <= 0 && NEG_FLAG == 0) /* Handle width  */
+    /* Handle width  */
+	if (prec <= 0 && NEG_FLAG == 0)
 	{
 		if (d == LONG_MIN)
 			count += 19;
