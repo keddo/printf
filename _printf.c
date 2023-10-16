@@ -28,6 +28,14 @@ int run_printf(const char *format, va_list args, buffer_t *output)
 	int i, wid, prec, ret = 0;
 	char tmp;
 	unsigned char flags, len;
+/**
+*handle_specifiers - Matches a conversion specifier with
+a corresponding conversion function.
+@specifier: A pointer to a potential conversion specifier.
+*
+Return: If a conversion function is matched - a pointer to the function.
+Otherwise - NULL.
+*/
 	unsigned int (*f)(va_list, buffer_t *,
 			unsigned char, int, int, unsigned char);
 
